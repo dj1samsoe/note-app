@@ -1,4 +1,97 @@
-body {
+/* src/index.css */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Add custom dark mode styles here */
+.dark {
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+}
+
+.dark .bg-primary {
+  background-color: var(--bg-primary);
+}
+
+.dark .bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.dark .text-primary {
+  color: var(--text-primary);
+}
+
+.dark .text-secondary {
+  color: var(--text-secondary);
+}
+
+/* Custom styles for the Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  border-radius: 999px;
+}
+
+.switch-label::before {
+  content: attr(data-off);
+  position: absolute;
+  top: 50%;
+  left: 6px;
+  transform: translateY(-50%);
+  color: #fff;
+  line-height: 1;
+}
+
+.switch-label::after {
+  content: attr(data-on);
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  color: #fff;
+  line-height: 1;
+}
+
+.switch-input:checked + .switch-label {
+  background-color: #10b981;
+}
+
+.switch-handle {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+}
+
+.switch-input:checked + .switch-label .switch-handle {
+  transform: translateX(18px);
+}
+
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +103,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
